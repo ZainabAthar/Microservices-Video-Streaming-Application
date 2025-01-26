@@ -1,0 +1,20 @@
+.card {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 20px;
+    background: black;
+    box-shadow: black;
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+}
+
+.cardImages {
+    border-radius: 8px;
+    margin-top: .1rem;
+}
+
+.homeCardsTitle {
+    padding: 0 1rem;
+    margin: 0 1rem;
+    color: white;
+}

@@ -1,0 +1,54 @@
+This repo is meant for a microservices application which will be built on Mern stack. The idea of application revolves around a photo gallery.
+
+
+4000: account
+4001: storage
+4002: gallery
+4003: logging
+4004: usagemntr
+4005: Query
+
+Event Bus : 4010
+
+docker build -t ranamahadahmer/frontend frontend
+docker build -t ranamahadahmer/eventbus microservices/eventbusserv
+docker build -t ranamahadahmer/gallerymgmt microservices/gallerymgmtserv
+docker build -t ranamahadahmer/logging microservices/loggingserv
+docker build -t ranamahadahmer/query microservices/queryserv
+docker build -t ranamahadahmer/storagemgmt microservices/storagemgmtserv
+docker build -t ranamahadahmer/usagemntr microservices/usagemntrserv
+docker build -t ranamahadahmer/useraccmgmt microservices/useraccmgmtserv
+
+docker push ranamahadahmer/frontend
+docker push ranamahadahmer/eventbus
+docker push ranamahadahmer/gallerymgmt
+docker push ranamahadahmer/logging
+docker push ranamahadahmer/query
+docker push ranamahadahmer/storagemgmt
+docker push ranamahadahmer/usagemntr
+docker push ranamahadahmer/useraccmgmt
+
+
+
+kubectl apply -f k8s/
+
+
+
+kubectl delete deployments frontend-depl
+kubectl delete deployments eventbus-depl
+kubectl delete deployments gallerymgmt-depl
+kubectl delete deployments logging-depl
+kubectl delete deployments storagemgmt-depl
+kubectl delete deployments usagemntr-depl
+kubectl delete deployments useraccmgmt-depl
+kubectl delete deployments query-depl
+
+
+kubectl delete services frontend-cluster-serv
+kubectl delete services eventbus-cluster-serv
+kubectl delete services gallerymgmt-cluster-serv
+kubectl delete services logging-cluster-serv
+kubectl delete services storagemgmt-cluster-serv
+kubectl delete services usagemntr-cluster-serv
+kubectl delete services useraccmgmt-cluster-serv
+kubectl delete services query-cluster-serv

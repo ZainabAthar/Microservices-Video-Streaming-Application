@@ -1,0 +1,76 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+metadata: 
+  name: microservices-photogallery
+deploy: 
+  kubectl: 
+    manifests: 
+      - ./k8s/*
+build: 
+  googleCloudBuild: 
+    projectId: atomic-409916
+  artifacts: 
+    - image: us.gcr.io/atomic-409916/frontend
+      context: frontend
+      docker: 
+        dockerfile: Dockerfile
+      sync: 
+        manual: 
+          - src: "*"
+            dest: .
+    - image: us.gcr.io/atomic-409916/eventbus
+      context: MicroServices/EventBusServ
+      docker: 
+        dockerfile: Dockerfile
+      sync: 
+        manual: 
+          - src: "*"
+            dest: .
+    - image: us.gcr.io/atomic-409916/gallerymgmt
+      context: MicroServices/GalleryMgmtServ
+      docker: 
+        dockerfile: Dockerfile
+      sync: 
+        manual: 
+          - src: "*"
+            dest: .
+    - image: us.gcr.io/atomic-409916/logging
+      context: MicroServices/loggingServ
+      docker: 
+        dockerfile: Dockerfile
+      sync: 
+        manual: 
+          - src: "*"
+            dest: .
+    - image: us.gcr.io/atomic-409916/query
+      context: MicroServices/QueryServ
+      docker: 
+        dockerfile: Dockerfile
+      sync: 
+        manual: 
+          - src: "*"
+            dest: .
+    - image: us.gcr.io/atomic-409916/storagemgmt
+      context: MicroServices/StorageMgmtServ
+      docker: 
+        dockerfile: Dockerfile
+      sync: 
+        manual: 
+          - src: "*"
+            dest: .
+    - image: us.gcr.io/atomic-409916/usagemntr
+      context: MicroServices/UsageMntrServ
+      docker: 
+        dockerfile: Dockerfile
+      sync: 
+        manual: 
+          - src: "*"
+            dest: .
+    - image: us.gcr.io/atomic-409916/useraccmgmt
+      context: MicroServices/UserAccMgmtServ
+      docker: 
+        dockerfile: Dockerfile
+      sync: 
+        manual: 
+          - src: "*"
+            dest: .

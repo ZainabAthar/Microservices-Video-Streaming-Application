@@ -1,0 +1,142 @@
+/* Existingvideos.module.css */
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 1rem 4rem;
+}
+
+.videoCard {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+
+  /* background:red; */
+  box-shadow: black;
+
+  border: black;
+}
+
+.cardBody {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cardBody img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+}
+
+.cardHeader,
+.cardFooter {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1); 
+  color:rgba(255, 255, 255, 0.829);
+}
+.cardHeader{
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.videoCard:hover > .cardHeader {
+  display: flex;
+  transition: ease-in-out;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.videoTitle {
+  margin: 2px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+.videoSize {
+    margin: 0;
+    font-size: 12px;
+}
+
+.cardBody img {
+  transition: transform 0.3s ease;
+}
+
+.cardBody img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.fullScreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullScreenvideo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+}
+
+
+.optionsButton {
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    position: relative;
+  }
+  
+  .options {
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    
+  background-color: rgba(4, 37, 128, 0.1); 
+  }
+  
+  .option {
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .option:hover {
+    background-color: gray;
+  }
+  
