@@ -32,9 +32,7 @@ The goal of the project is to create a scalable and efficient photo gallery appl
 ## Project Setup
 
 1. **Clone Repository**: Clone this repository to your local machine.
-   ```bash
-   git clone https://github.com/abubakar-javed/Microservices_photoGallery
-   ```
+   
 
 2. **Install Dependencies**: Install dependencies for both frontend and backend.
    ```bash
@@ -60,8 +58,4 @@ The goal of the project is to create a scalable and efficient photo gallery appl
 
 5. **Access Application**: Access the photo gallery application via the provided URL. Register/login to explore the features and functionalities.
 
-
-
-## Acknowledgements
-
-Special thanks to Sir Qaisar Riaz for providing the project requirements and guidance throughout the development process.
+ 
